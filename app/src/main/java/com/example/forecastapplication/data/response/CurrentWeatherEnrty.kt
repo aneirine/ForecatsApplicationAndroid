@@ -1,9 +1,9 @@
-package com.example.forecastapplication.data
+package com.example.forecastapplication.data.response
 
 
 import com.google.gson.annotations.SerializedName
 
-data class Current(
+data class CurrentWeatherEnrty(
     val cloudcover: Int,
     val feelslike: Int,
     val humidity: Int,
