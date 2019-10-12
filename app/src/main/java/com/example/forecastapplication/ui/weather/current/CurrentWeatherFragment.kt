@@ -38,7 +38,7 @@ class CurrentWeatherFragment : Fragment() {
 
         val apiService = ApixuWeatherApiService()
         GlobalScope.launch(Dispatchers.Main) {
-            val currentWeatherResponse = apiService.getCurrentWeather("Kyiv").await()
+            val currentWeatherResponse = apiService.getCurrentWeather("London").await()
             current_weather_text.text = currentWeatherResponse.currentWeatherEnrty.toString()
         }
     }
