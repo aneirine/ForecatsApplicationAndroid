@@ -3,4 +3,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="current_weather_text">Current Weather</string>
+    <string name="details_text">Details</string>
+    <string name="future_weather_text">Future Weather</string>
+
+    <!--Bottom Navigation-->
+    <string name="today_text">Today</string>
+    <string name="next_week_text">Next Week</string>
+    <string name="settings_text">Settings</string>
 </resources>

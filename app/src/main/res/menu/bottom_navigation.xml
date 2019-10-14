@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/currentWeatherFragment"
         android:icon="@drawable/ic_today"
-        android:title="Сегодня" />
+        android:title="@string/today_text" />
 
     <item android:id="@+id/futureWeatherFragment"
         android:icon="@drawable/ic_week"
-        android:title="Следующая неделя" />
+        android:title="@string/next_week_text" />
 
     <item android:id="@+id/settingsFragment"
         android:icon="@drawable/ic_settings"
-        android:title="Настройки" />
+        android:title="@string/settings_text" />
 
 
 
