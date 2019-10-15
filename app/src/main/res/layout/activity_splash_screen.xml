@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pastel_blue"
+    tools:context=".ui.SplashScreen">
+
+
+    <TextView
+        android:id="@+id/title_forecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sun_icon"
+        android:layout_alignStart="@+id/sun_icon"
+        android:layout_alignLeft="@+id/sun_icon"
+        android:layout_alignEnd="@+id/sun_icon"
+        android:layout_alignRight="@+id/sun_icon"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginRight="-1dp"
+        android:layout_marginBottom="-1dp"
+        android:text="Forecast"
+        android:textAlignment="center"
+        android:textColor="#FD8607"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/sun_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="-50dp"
+        android:src="@drawable/sun" />
+
+    <ImageView
+        android:id="@+id/cloud_icon"
+        android:layout_width="195dp"
+        android:layout_height="195dp"
+        android:layout_alignStart="@+id/sun_icon"
+        android:layout_alignLeft="@+id/sun_icon"
+        android:layout_alignEnd="@+id/sun_icon"
+        android:layout_alignRight="@+id/sun_icon"
+        android:layout_alignBottom="@+id/sun_icon"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="-27dp"
+        android:src="@drawable/cloud" />
+
+
+</RelativeLayout>
