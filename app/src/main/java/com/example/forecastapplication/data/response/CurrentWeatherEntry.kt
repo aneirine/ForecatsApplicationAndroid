@@ -3,10 +3,12 @@ package com.example.forecastapplication.data.response
 
 import com.google.gson.annotations.SerializedName
 
-data class CurrentWeatherEnrty(
+data class CurrentWeatherEntry(
     val cloudcover: Int,
     val feelslike: Int,
     val humidity: Int,
+    @SerializedName("is_day")
+    val isDay: String,
     @SerializedName("observation_time")
     val observationTime: String,
     val precip: Int,
