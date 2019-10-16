@@ -19,8 +19,7 @@ class ImperialCurrentWeatherEntry(
     override val visibility: Double,
     @ColumnInfo(name = "weatherCode")
     override val weatherCode: Double,
-    @ColumnInfo(name = "weatherDescriptions")
-    override val weatherDescriptions: List<String>,
+
     @ColumnInfo(name = "windDegree")
     override val windDegree: Double,
     @ColumnInfo(name = "windSpeed")

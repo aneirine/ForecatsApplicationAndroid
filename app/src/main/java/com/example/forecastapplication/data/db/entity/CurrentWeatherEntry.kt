@@ -24,8 +24,7 @@ data class CurrentWeatherEntry(
     val visibility: Double,
     @SerializedName("weather_code")
     val weatherCode: Double,
-    @SerializedName("weather_descriptions")
-    val weatherDescriptions: List<String>,
+  
     @SerializedName("wind_degree")
     val windDegree: Double,
     @SerializedName("wind_dir")
