@@ -8,7 +8,7 @@ data class Location(
     val lat: String,
     val localtime: String,
     @SerializedName("localtime_epoch")
-    val localtimeEpoch: Int,
+    val localtimeEpoch: Double,
     val lon: String,
     val name: String,
     val region: String,
