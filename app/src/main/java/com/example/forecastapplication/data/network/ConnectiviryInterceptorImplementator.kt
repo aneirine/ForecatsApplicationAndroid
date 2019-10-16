@@ -3,10 +3,11 @@ package com.example.forecastapplication.data.network
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.net.NetworkInfo
 import android.os.Build
+import com.example.forecastapplication.internal.NoConnectivityExceptions
 import okhttp3.Interceptor
 import okhttp3.Response
+import java.io.IOException
 
 class ConnectiviryInterceptorImplementator(
     context: Context
@@ -16,7 +17,9 @@ class ConnectiviryInterceptorImplementator(
 
 
     override fun intercept(chain: Interceptor.Chain): Response {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        if(!isOnline())
+            throw NoConnectivityExceptions()
+        return chain.proceed(chain.request())
     }
 
     private fun isOnline(): Boolean {
