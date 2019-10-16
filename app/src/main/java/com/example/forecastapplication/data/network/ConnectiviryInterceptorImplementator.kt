@@ -17,7 +17,7 @@ class ConnectiviryInterceptorImplementator(
 
 
     override fun intercept(chain: Interceptor.Chain): Response {
-        if(!isOnline())
+        if (!isOnline())
             throw NoConnectivityExceptions()
         return chain.proceed(chain.request())
     }
@@ -29,18 +29,20 @@ class ConnectiviryInterceptorImplementator(
         if (connectivityManager != null) {
             if (Build.VERSION.SDK_INT < 23) {
                 val networkInfo = connectivityManager.activeNetworkInfo
-
-                networkInfo?.let {
-                    return it.isConnected
+                if (networkInfo != null) {
+                    return networkInfo.isConnected
                 }
+
 
             } else {
                 val networkActive = connectivityManager.activeNetwork
-                networkActive.let {
-                    val networkCapabilities = connectivityManager.getNetworkCapabilities(it)
+                if (networkActive != null) {
+                    val networkCapabilities =
+                        connectivityManager.getNetworkCapabilities(networkActive)
                     return networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)
                             || networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)
                 }
+
 
             }
 
