@@ -4,32 +4,31 @@ import androidx.room.ColumnInfo
 
 class ImperialCurrentWeatherEntry(
     @ColumnInfo(name = "humidity")
-    override val humidity: Double,
+    val humidity: Double,
     @ColumnInfo(name = "isDay")
-    override val isDay: String,
+    val isDay: String,
     @ColumnInfo(name = "observationTime")
-    override val observationTime: String,
+    val observationTime: String,
     @ColumnInfo(name = "pressure")
-    override val pressure: Double,
+    val pressure: Double,
     @ColumnInfo(name = "temperature")
-    override val temperature: Double,
+    val temperature: Double,
     @ColumnInfo(name = "uvIndex")
-    override val uvIndex: Double,
+    val uvIndex: Double,
     @ColumnInfo(name = "visibility")
-    override val visibility: Double,
+    val visibility: Double,
     @ColumnInfo(name = "weatherCode")
-    override val weatherCode: Double,
-
+    val weatherCode: Double,
     @ColumnInfo(name = "windDegree")
-    override val windDegree: Double,
+    val windDegree: Double,
     @ColumnInfo(name = "windSpeed")
-    override val windSpeed: Double,
+    val windSpeed: Double,
     @ColumnInfo(name = "cloudcover")
-    override val cloudCover: Double,
+    val cloudCover: Double,
     @ColumnInfo(name = "feelslike")
-    override val feelsLike: Double,
+    val feelsLike: Double,
     @ColumnInfo(name = "precip")
-    override val precipitation: Double,
+    val precipitation: Double,
     @ColumnInfo(name = "windDir")
-    override val windDirection: String
-) : UnitSpecificCurrentWeatherEntry
+    val windDirection: String
+)
