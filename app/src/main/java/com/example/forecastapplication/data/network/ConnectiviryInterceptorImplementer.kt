@@ -9,7 +9,7 @@ import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException
 
-class ConnectiviryInterceptorImplementator(
+class ConnectiviryInterceptorImplementer(
     context: Context
 ) : ConnectivityInterceptor {
 
