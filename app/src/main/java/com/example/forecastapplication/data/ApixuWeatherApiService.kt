@@ -1,6 +1,5 @@
 package com.example.forecastapplication.data
 
-import com.example.forecastapplication.data.network.ConnectiviryInterceptorImplementator
 import com.example.forecastapplication.data.network.ConnectivityInterceptor
 import com.example.forecastapplication.data.network.response.CurrentWeatherResponce
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
