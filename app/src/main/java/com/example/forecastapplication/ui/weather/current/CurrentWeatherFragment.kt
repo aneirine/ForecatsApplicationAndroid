@@ -64,5 +64,5 @@ class CurrentWeatherFragment : Fragment(), KodeinAware {
 
     private fun bindUI() = GlobalScope.launch {
         val currentWeather = viewModel.weather.await()
-    }
+    }.cancel()
 }
