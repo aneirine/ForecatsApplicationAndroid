@@ -5,5 +5,5 @@ import com.example.forecastapplication.data.db.unitlocalized.ImperialCurrentWeat
 
 
 interface ForecastRepository {
-    suspend fun getCurrentWeather(metric: Boolean): LiveData<ImperialCurrentWeatherEntry>
+    suspend fun getCurrentWeather(): LiveData<ImperialCurrentWeatherEntry>
 }
