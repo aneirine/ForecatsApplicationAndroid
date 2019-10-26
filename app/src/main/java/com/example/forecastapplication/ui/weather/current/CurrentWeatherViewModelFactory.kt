@@ -3,6 +3,7 @@ package com.example.forecastapplication.ui.weather.current
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.forecastapplication.data.repository.ForecastRepository
+import com.example.forecastapplication.data.repository.ForecastRepositoryImplementer
 
 class CurrentWeatherViewModelFactory(
     private val forecastRepository: ForecastRepository
