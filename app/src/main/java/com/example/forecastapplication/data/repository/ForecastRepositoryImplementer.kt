@@ -26,6 +26,7 @@ class ForecastRepositoryImplementer(
     }
 
     override suspend fun getCurrentWeather(): LiveData<ImperialCurrentWeatherEntry> {
+        initWeatherData()
         return withContext(Dispatchers.IO) {
             return@withContext currentWeatherDao.getWeather()
         }
@@ -38,10 +39,15 @@ class ForecastRepositoryImplementer(
         }
     }
 
-    private suspend fun iniWeatherData() {
-        if (isFetchCurrentNeeded(ZonedDateTime.now().minusHours(1))) {
-            fetchCurrentWeather()
+    private suspend fun initWeatherData() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (isFetchCurrentNeeded(ZonedDateTime.now().minusHours(1))) {
+                return fetchCurrentWeather()
+            }
+        } else {
+            return fetchCurrentWeather();
         }
+
     }
 
     private suspend fun fetchCurrentWeather() {
@@ -51,11 +57,14 @@ class ForecastRepositoryImplementer(
         )
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    private fun isFetchCurrentNeeded(lastFetchTime: ZonedDateTime): Boolean {
-        val thirtyMinutesAgo = ZonedDateTime.now().minusMinutes(30);
-        return lastFetchTime.isBefore(thirtyMinutesAgo)
 
+    private fun isFetchCurrentNeeded(lastFetchTime: ZonedDateTime): Boolean {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val thirtyMinutesAgo = ZonedDateTime.now().minusMinutes(30);
+            lastFetchTime.isBefore(thirtyMinutesAgo)
+        } else {
+            return true;
+        }
 
     }
 }
